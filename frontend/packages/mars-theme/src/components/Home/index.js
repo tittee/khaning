@@ -6,7 +6,7 @@ import Products from "./Products";
 import Organic from "./Organic";
 import Contact from "./Contact";
 
-const Home = () => {
+const Home = ({ state }) => {
   return (
     <>
       <Banner />

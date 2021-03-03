@@ -1,63 +1,84 @@
+import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = ({ state }) => (
-  <>
-    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-      <div className="col-lg-2">
-        <Link
-          className="navbar-brand mx-auto d-none d-lg-block"
-          link="/"
-        >
-          KHANING
-        </Link>
+const Nav = ({ state, libraries }) => {
+  // const { items } = state.source.get("menus/primary-menu");
+  const items = state.source.get("/menu/primary-menu/").items;
+
+  console.log("ITEMS:", items);
+
+  return (
+    <>
+      {items.map((item) => {
+        console.log("item: ", item);
+      })}
+      <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <div className="col-lg-2">
+          <Link className="navbar-brand mx-auto d-none d-lg-block" link="/">
+            KHANING
+          </Link>
+        </div>
+        <div className="col-lg-8">
+          <ul className="navbar-nav justify-content-lg-center">
+            {items.map((item) => {
+              if (!item.child_items) {
+                return (
+                  <li className="nav-item ml-0" key={item.ID}>
+                    <Link className="nav-link pl-0" link={item.url}>
+                      {item.title}
+                    </Link>
+                  </li>
+                );
+              } else {
+                const childItems = item.child_items;
+                return (
+                  <li
+                    key={item.ID}
+                    className="nav-item dropdown mega_menu_holder"
+                  >
+                    <Link className="nav-link dropdown-toggle" link="#">
+                      {item.title}
+                    </Link>
+                    <div class="dropdown-menu">
+                      {childItems.map((childItem) => {
+                        return (
+                          <Link
+                            key={childItem.ID}
+                            className="dropdown-item"
+                            link={item.url}
+                          >
+                            <span className="">{childItem.title}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </div>
+        <div className="col-lg-2 d-none d-lg-block">
+          <ul className="list-unstyled nav-modules text-end">
+            <li className="list-inline-item">
+              <FontAwesomeIcon
+                icon={faSearch}
+                className="i h6 navbar-icon-size me-px-18 openBtn"
+                onClick={() => console.log("ss")}
+              />
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="col-lg-8">
-        <ul className="navbar-nav justify-content-lg-center">
-          {state.theme.menu.map(([name, link]) => {
-            // Check if the link matched the current page url
-            const isCurrentPage = state.router.link === link;
-            return (
-              <li key={name} className="nav-item ml-0">
-                {/* If link url is the current page, add `aria-current` for a11y */}
-                <Link
-                  link={link}
-                  className="nav-link pl-0"
-                  aria-current={isCurrentPage ? "page" : undefined}
-                >
-                  {name}
-                </Link>
-              </li>
-            );
-          })}
-          {/* <li class="nav-item dropdown mega_menu_holder"><a class="nav-link dropdown-toggle" link="#"
-                  data-bs-toggle="dropdown">Blog</a>
-                <div class="dropdown-menu"><a class="dropdown-item" link="blog.html">Blog</a><a class="dropdown-item"
-                    link="blog-single-post.html">Single Post</a>
-              </li> */}
-        </ul>
-      </div>
-      <div className="col-lg-2 d-none d-lg-block">
-        <ul className="list-unstyled nav-modules text-end">
-          <li className="list-inline-item">
-            <FontAwesomeIcon
-              icon={faSearch}
-              className="i h6 navbar-icon-size me-px-18 openBtn"
-              onClick="openSearch()"
-            />
-          </li>
-        </ul>
-      </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 export default connect(Nav);
 
-const NavContainer = styled.nav`
-`;
+const NavContainer = styled.nav``;
 
-const NavItem = styled.div`
-`;
+const NavItem = styled.div``;

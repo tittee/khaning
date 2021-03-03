@@ -99,7 +99,7 @@ const Banner = () => {
                       </div>
                     </Slide>
                     <Slide className="carousel-item pb-px-lg-50" index={2}>
-                    <div className="position-relative">
+                            <div className="position-relative">
                         <img
                           className="d-block w-100 height-px-520 object-fit-cover w-100"
                           src={imgShopS6}
@@ -128,17 +128,17 @@ const Banner = () => {
                   </Slider>
                   <ButtonBack className="carousel-control-prev">
                     <span
-                      class="carousel-control-prev-icon"
+                      className="carousel-control-prev-icon"
                       aria-hidden="true"
                     ></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span className="visually-hidden">Previous</span>
                   </ButtonBack>
                   <ButtonNext className="carousel-control-next">
                     <span
-                      class="carousel-control-next-icon"
+                      className="carousel-control-next-icon"
                       aria-hidden="true"
                     ></span>
-                    <span class="visually-hidden">Next</span>
+                    <span className="visually-hidden">Next</span>
                   </ButtonNext>
                 </CarouselProvider>
 

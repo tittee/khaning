@@ -1,7 +1,7 @@
 import { connect, styled } from "frontity";
 import Nav from "./nav";
 import Link from "./link";
-import MobileMenu from "./menu";
+// import MobileMenu from "./menu";
 
 const Header = ({ state }) => {
   return (

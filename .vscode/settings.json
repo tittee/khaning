@@ -1,0 +1,29 @@
+{
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+  "editor.wordWrap": "on",
+  "php.validate.run": "onType",
+  "phpfmt.detect_indent": false,
+  "phpfmt.indent_with_space": 2,
+  // Set the default
+  "editor.formatOnSave": true,
+  // Enable per-language
+  "[php]": {
+    "editor.formatOnSave": true
+  },
+  "phpfmt.passes": [
+    "SpaceAroundParentheses",
+    "AlignGroupDoubleArrow",
+    "AllmanStyleBraces",
+    "ConvertOpenTagWithEcho",
+    "AlignEquals",
+    "IndentTernaryConditions",
+    "MergeElseIf",
+    "NewLineBeforeReturn",
+    "RemoveSemicolonAfterCurly",
+    "ReplaceBooleanAndOr",
+    "SmartLnAfterCurlyOpen",
+    "SpaceAroundParentheses"
+  ],
+  "phpfmt.psr2": false
+}
