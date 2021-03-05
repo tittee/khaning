@@ -2,7 +2,7 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
-import {menuHandler} from "./apis";
+import { menuHandler, acfPageID } from "./apis";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -42,12 +42,9 @@ const marsTheme = {
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
       },
-      beforeSSR: async ({ actions }) => {   
-        // libraries.source.handlers.push(menuHandler);     
-        // await actions.source.fetch("/wp-api-menus/v2/menus/2");        
-        // await actions.source.fetch("menus/2");
-        // await actions.source.fetch('/menus/v1/locations/primary_navigation')
+      beforeSSR: async ({ actions }) => {           
         await actions.source.fetch("/menu/primary-menu/");
+        await actions.source.fetch("/acf/pages/2"); //HOMEPAGE or FRONTPAGE
       },
     },
   },
@@ -61,7 +58,7 @@ const marsTheme = {
       processors: [image, iframe, link],
     },
     source: {
-      handlers: [menuHandler],
+      handlers: [menuHandler, acfPageID],
     },
   },
 };

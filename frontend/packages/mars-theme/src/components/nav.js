@@ -8,17 +8,31 @@ const Nav = ({ state, libraries }) => {
   // const { items } = state.source.get("menus/primary-menu");
   const items = state.source.get("/menu/primary-menu/").items;
 
-  console.log("ITEMS:", items);
-
   return (
     <>
-      {items.map((item) => {
-        console.log("item: ", item);
-      })}
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <div className="col-lg-2">
           <Link className="navbar-brand mx-auto d-none d-lg-block" link="/">
-            KHANING
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="170"
+              height="43"
+              viewBox="0 0 119 43"
+            >
+              <text
+                id="Oganic"
+                transform="translate(0 35)"
+                fill="#2a5631"
+                fontSize="32"
+                fontFamily="PlayfairDisplay-Bold, Playfair Display"
+                fontWeight="700"
+                letterSpacing="-0.05em"
+              >
+                <tspan x="0" y="0">
+                  KHANING
+                </tspan>
+              </text>
+            </svg>
           </Link>
         </div>
         <div className="col-lg-8">

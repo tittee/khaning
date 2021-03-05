@@ -6,20 +6,16 @@ import Link from "./link";
 const Header = ({ state }) => {
   return (
     <>
-      {/* <Container>
-        <StyledLink link="/">
-          <Title>{state.frontity.title}</Title>
-        </StyledLink>
-        <Description>{state.frontity.description}</Description>
-        <MobileMenu />
-      </Container>
-      <Nav /> */}
       <div className="bg-bay-leaf py-2">
         <div className="continer">
           <Link className="text-center" link="#">
             <p className="font-size-14 text-white mb-0">
-              Black Friday | Hundreds of brands, up to 50% off!
-              <span>                
+              Frontity + WordPress Sage Theme | เลี่ยงได้หลังบ้านก็ไปใช้
+             
+             
+             
+              Node.JSเถอะ
+              <span>
                 <i className="fas fa-long-arrow-alt-right"></i>
               </span>
             </p>
@@ -33,7 +29,8 @@ const Header = ({ state }) => {
             <Link
               className="navbar-brand text-center d-md-block d-lg-none"
               href="index.html"
-            >KHANING
+            >
+              KHANING
             </Link>
             <button
               className="navbar-toggler"
@@ -48,7 +45,6 @@ const Header = ({ state }) => {
             </button>
             <Nav />
           </div>
-          
         </nav>
       </div>
     </>

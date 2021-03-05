@@ -1,5 +1,5 @@
 const settings = {
-  name: "wittawatk",
+  name: "khaning",
   state: {
     frontity: {
       url: "https://test.frontity.org",
@@ -38,10 +38,10 @@ const settings = {
       name: "@frontity/tiny-router",
       state: {
         router: {
-          autoFetch: false
-        }
-      }
-    },    
+          autoFetch: false,
+        },
+      },
+    },
     "@frontity/html2react",
   ],
 };
