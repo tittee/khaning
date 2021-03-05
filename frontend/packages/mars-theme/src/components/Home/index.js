@@ -7,9 +7,11 @@ import Organic from "./Organic";
 import Contact from "./Contact";
 
 const Home = ({ state }) => {
+  const data = state.source.get("/acf/pages/2").acf;
+
   return (
     <>
-      <Banner />
+      <Banner data={data} />
       <About />
       <Eggs />
       <Products />

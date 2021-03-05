@@ -5,6 +5,8 @@ import imgShopS5 from "./../../assets/images/shop/s5.jpg";
 import imgShopS6 from "./../../assets/images/shop/s6.jpg";
 import imgFlowersCircle from "./../../assets/images/flowers/circle.png";
 import Link from "../link";
+import Image from "@frontity/components/image";
+
 import {
   CarouselProvider,
   Slider,
@@ -13,7 +15,7 @@ import {
   ButtonNext,
 } from "pure-react-carousel";
 
-const Carousel = () => {
+const Carousel = ({ state, count, carousels }) => {
   return (
     <>
       <Global styles={css(carouselStyles)} />
@@ -21,42 +23,52 @@ const Carousel = () => {
       <CarouselProvider
         naturalSlideWidth={400}
         naturalSlideHeight={600}
-        totalSlides={3}
+        totalSlides={count}
         infinite={true}
         className="carousel slide z-index-back me-px-lg-0 me-px-md-60"
       >
         <Slider className="carousel-inner">
-          <Slide
-            className="carousel-item pb-px-lg-50"
-            style={{ height: "100%", paddingBottom: "0" }}
-            index={0}
-          >
-            <div className="position-relative">
-              <img
-                className="d-block w-100 height-px-520 object-fit-cover w-100"
-                src={imgShopS3}
-                alt="slider one image"
-              />
-              <div className="position-absolute top-50 end-0">
-                <div className="me-px-50 mt-px-lg-145 mt-px-md-151">
-                  <div className="bg-white mb-px-n-50 border-radius-home ps-px-30 pe-px-30 pt-px-28 pb-px-32">
-                    <h5>Grilled squids </h5>
-                    <div className="pt-px-4">
-                      <h6 className="price">$9.99</h6>
-                    </div>
-                    <div className="mt-px-14">
-                      <Link
-                        className="h6 btn-link border-2 border-bottom shop-button-style"
-                        link="/"
-                      >
-                        Read More
-                      </Link>
+          { carousels ? (
+            carousels.map((carousel, index) => {
+              return (              
+                <Slide
+                  className="carousel-item pb-px-lg-50"
+                  style={{ height: "100%", paddingBottom: "0" }}
+                  index={index}
+                >
+                  <div className="position-relative">
+                    <Image
+                      className="d-block w-100 height-px-520 object-fit-cover w-100"
+                      src={carousel.image.url}
+                      alt={carousel.image.alt}
+                    />
+                    <div className="position-absolute top-50 end-0">
+                      <div className="me-px-50 mt-px-lg-145 mt-px-md-151">
+                        <div className="bg-white mb-px-n-50 border-radius-home ps-px-30 pe-px-30 pt-px-28 pb-px-32">
+                          <h5 dangerouslySetInnerHTML={{ __html: carousel.title }}/>
+                          { carousel.sub_title && (
+                          <div className="pt-px-4">
+                            <h6 className="price" dangerouslySetInnerHTML={{ __html: carousel.sub_title }} />
+                          </div>
+                          )}
+                          { carousel.link && (
+                          <div className="mt-px-14">
+                            <Link
+                              className="h6 btn-link border-2 border-bottom shop-button-style"
+                              link={carousel.link.url}
+                            >
+                              {carousel.link.title}
+                            </Link>
+                          </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </Slide>
+                </Slide>
+              );
+            }) 
+          ) : (
           <Slide className="carousel-item pb-px-lg-50" index={1}>
             <div className="position-relative">
               <img
@@ -67,16 +79,16 @@ const Carousel = () => {
               <div className="position-absolute top-50 end-0">
                 <div className="me-px-50 mt-px-lg-145 mt-px-md-151">
                   <div className="bg-white mb-px-n-50 border-radius-home ps-px-30 pe-px-30 pt-px-28 pb-px-32">
-                    <h5>Grilled squids </h5>
+                    <h5>ไข่ไก่ออร์แกนิค </h5>
                     <div className="pt-px-4">
-                      <h6 className="price">$9.99</h6>
+                      <h6 className="price">70 THB</h6>
                     </div>
                     <div className="mt-px-14">
                       <Link
                         className="h6 btn-link border-2 border-bottom shop-button-style"
                         link="/"
                       >
-                        Read More
+                       สั่งซื้อ
                       </Link>
                     </div>
                   </div>
@@ -84,33 +96,7 @@ const Carousel = () => {
               </div>
             </div>
           </Slide>
-          <Slide className="carousel-item pb-px-lg-50" index={2}>
-            <div className="position-relative">
-              <img
-                className="d-block w-100 height-px-520 object-fit-cover w-100"
-                src={imgShopS6}
-                alt="slider one image"
-              />
-              <div className="position-absolute top-50 end-0">
-                <div className="me-px-50 mt-px-lg-145 mt-px-md-151">
-                  <div className="bg-white mb-px-n-50 border-radius-home ps-px-30 pe-px-30 pt-px-28 pb-px-32">
-                    <h5>Grilled squids </h5>
-                    <div className="pt-px-4">
-                      <h6 className="price">$9.99</h6>
-                    </div>
-                    <div className="mt-px-14">
-                      <Link
-                        className="h6 btn-link border-2 border-bottom shop-button-style"
-                        link="/"
-                      >
-                        Read More
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Slide>
+          )}          
         </Slider>
         <ButtonBack className="carousel-control-prev">
           <span

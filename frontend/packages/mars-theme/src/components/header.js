@@ -3,7 +3,7 @@ import Nav from "./nav";
 import Link from "./link";
 // import MobileMenu from "./menu";
 
-const Header = ({ state }) => {
+const Header = () => {
   return (
     <>
       <div className="bg-bay-leaf py-2">
@@ -11,10 +11,7 @@ const Header = ({ state }) => {
           <Link className="text-center" link="#">
             <p className="font-size-14 text-white mb-0">
               Frontity + WordPress Sage Theme | เลี่ยงได้หลังบ้านก็ไปใช้
-             
-             
-             
-              Node.JSเถอะ
+              Node.JS เถอะ
               <span>
                 <i className="fas fa-long-arrow-alt-right"></i>
               </span>
