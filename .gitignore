@@ -23,6 +23,9 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+aria_log_control
+ib_logfile0
+aria_log.00000001
 logs/
 
 frontend/build/

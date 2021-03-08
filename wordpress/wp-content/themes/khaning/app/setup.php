@@ -92,8 +92,20 @@ add_action( 'widgets_init', function ()
     'id'   => 'sidebar-primary',
   ] + $config );
   register_sidebar( [
-    'name' => __( 'Footer', 'sage' ),
-    'id'   => 'sidebar-footer',
+    'name' => __( 'Footer Column 1', 'sage' ),
+    'id'   => 'sidebar-footer-1',
+  ] + $config );
+  register_sidebar( [
+    'name' => __( 'Footer Column 2', 'sage' ),
+    'id'   => 'sidebar-footer-2',
+  ] + $config );
+  register_sidebar( [
+    'name' => __( 'Footer Column 3', 'sage' ),
+    'id'   => 'sidebar-footer-3',
+  ] + $config );
+  register_sidebar( [
+    'name' => __( 'Footer Column 4', 'sage' ),
+    'id'   => 'sidebar-footer-4',
   ] + $config );
 } );
 
@@ -198,3 +210,31 @@ function organic_post_type()
 
 }
 add_action( 'init', __NAMESPACE__ . '\\organic_post_type', 0 );
+
+
+function my_acf_op_init()
+{
+
+  // Check function exists.
+  if ( function_exists( 'acf_add_options_page' ) )
+  {
+    // Register options page.
+    $option_page = acf_add_options_page( array(
+      'page_title' => __( 'Theme Settings' ),
+      'menu_title' => __( 'Theme Settings' ),
+      'menu_slug'  => 'theme-settings',
+      'capability' => 'edit_posts',
+      'redirect'   => false,
+    ) );
+  }
+}
+add_action( 'acf/init', __NAMESPACE__ . '\\my_acf_op_init' );
+
+
+function my_rest_api_init() {
+  $sidebar = new Sidebar();
+  $sidebar->register_routes();
+  $widget = new Widget();
+  $widget->register_routes();
+}
+add_action( 'rest_api_init', __NAMESPACE__ .'\\my_rest_api_init' );
