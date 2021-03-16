@@ -28,10 +28,11 @@ const Carousel = ({ state, count, carousels }) => {
         className="carousel slide z-index-back me-px-lg-0 me-px-md-60"
       >
         <Slider className="carousel-inner">
-          { carousels ? (
+          { carousels && (
             carousels.map((carousel, index) => {
               return (              
                 <Slide
+                  key={index}
                   className="carousel-item pb-px-lg-50"
                   style={{ height: "100%", paddingBottom: "0" }}
                   index={index}
@@ -68,35 +69,7 @@ const Carousel = ({ state, count, carousels }) => {
                 </Slide>
               );
             }) 
-          ) : (
-          <Slide className="carousel-item pb-px-lg-50" index={1}>
-            <div className="position-relative">
-              <img
-                className="d-block w-100 height-px-520 object-fit-cover w-100"
-                src={imgShopS5}
-                alt="slider one image"
-              />
-              <div className="position-absolute top-50 end-0">
-                <div className="me-px-50 mt-px-lg-145 mt-px-md-151">
-                  <div className="bg-white mb-px-n-50 border-radius-home ps-px-30 pe-px-30 pt-px-28 pb-px-32">
-                    <h5>ไข่ไก่ออร์แกนิค </h5>
-                    <div className="pt-px-4">
-                      <h6 className="price">70 THB</h6>
-                    </div>
-                    <div className="mt-px-14">
-                      <Link
-                        className="h6 btn-link border-2 border-bottom shop-button-style"
-                        link="/"
-                      >
-                       สั่งซื้อ
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Slide>
-          )}          
+          )}         
         </Slider>
         <ButtonBack className="carousel-control-prev">
           <span

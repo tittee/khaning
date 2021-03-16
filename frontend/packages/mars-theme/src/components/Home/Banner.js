@@ -6,7 +6,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Carousel from "./Carousel";
 import Link from "../link";
 
-const Banner = ({ state, data }) => {
+const Banner = ({ data }) => {
   return (
     <>
       <div className="bg-texture-image pt-px-lg-120 pb-px-lg-120 pt-px-md-80 pb-px-md-70 pt-px-30 pb-px-60 overflow-hidden">
@@ -27,7 +27,6 @@ const Banner = ({ state, data }) => {
             </div>
             <div className="col-lg-7 my-auto pe-px-lg-150">
               <div className="me-px-lg-100 me-px-md-60">
-                {/* <h5 className="font-letter-space mb-px-8">{ data.banner_title }</h5> */}
                 <h5
                   className="font-letter-space mb-px-8"
                   dangerouslySetInnerHTML={{ __html: data.banner_subtitle }}

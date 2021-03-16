@@ -3,20 +3,20 @@ import Banner from "./Banner";
 import About from "./About";
 import Eggs from "./Eggs";
 import Products from "./Products";
-import Organic from "./Organic";
-import Contact from "./Contact";
+import News from "./News";
+import OurMenu from "./OurMenu";
 
 const Home = ({ state }) => {
-  const data = state.source.get("/acf/pages/2").acf;
+  const data = state.source.get("/acf/pages/2").acf;  
 
   return (
     <>
       <Banner data={data} />
-      <About />
+      <About whats_eggs_organic={data.whats_eggs_organic} />
       <Eggs />
       <Products />
-      <Organic />
-      <Contact />
+      <News />
+      <OurMenu />
     </>
   );
 };
