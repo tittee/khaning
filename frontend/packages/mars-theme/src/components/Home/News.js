@@ -1,17 +1,13 @@
 import React from "react";
 import { connect } from "frontity";
-import imgHomeH5 from "./../../assets/images/home/h5.jpg";
-import imgHomeH6 from "./../../assets/images/home/h6.jpg";
-import imgFlowersF8 from "./../../assets/images/flowers/f8.png";
-import imgFlowersF9 from "./../../assets/images/flowers/f9.png";
 import Link from "../link";
 
-const Organic = () => {
+const News = () => {
   return (
     <>
       <div className="bg-texture-image overflow-hidden pt-px-lg-120 pb-px-lg-120 pt-px-md-80 pb-px-md-70 pt-px-60 pb-px-50">
         <div className="text-center mb-px-lg-62 mb-px-lg-52 mb-px-40">
-          <h3>ข่าวสาร</h3>
+          <h3>บทความ</h3>
         </div>
         <div className="container pb-px-lg-66">
           <div className="row gx-lg-5 gy-lg-5 gy-3 gx-3 blog-post card-post-style">
@@ -132,4 +128,4 @@ const Organic = () => {
   );
 };
 
-export default Organic;
+export default News;

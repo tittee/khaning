@@ -1,8 +1,5 @@
 import { connect } from "frontity";
 import imgComp7 from "./../../assets/images/flowers/composition7.png";
-import imgLogo4 from "./../../assets/images/logo4.png";
-import imgLogo5 from "./../../assets/images/logo5.png";
-import imgLogo6 from "./../../assets/images/logo6.png";
 import Link from "../link";
 
 const About = ({ whats_eggs_organic }) => {

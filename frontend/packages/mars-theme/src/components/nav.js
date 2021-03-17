@@ -4,8 +4,7 @@ import Link from "./link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = ({ state, libraries }) => {
-  // const { items } = state.source.get("menus/primary-menu");
+const Nav = ({ state }) => {
   const items = state.source.get("/menu/primary-menu/").items;
 
   return (

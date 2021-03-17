@@ -196,6 +196,7 @@ function organic_post_type()
     'public'              => true,
     'show_ui'             => true,
     'show_in_menu'        => true,
+    'show_in_rest'        => true,
     'menu_position'       => 5,
     'menu_icon'           => 'dashicons-buddicons-activity',
     'show_in_admin_bar'   => true,
@@ -238,3 +239,4 @@ function my_rest_api_init() {
   $widget->register_routes();
 }
 add_action( 'rest_api_init', __NAMESPACE__ .'\\my_rest_api_init' );
+

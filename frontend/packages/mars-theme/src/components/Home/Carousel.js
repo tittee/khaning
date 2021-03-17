@@ -15,7 +15,7 @@ import {
   ButtonNext,
 } from "pure-react-carousel";
 
-const Carousel = ({ state, count, carousels }) => {
+const Carousel = ({ count, carousels }) => {
   return (
     <>
       <Global styles={css(carouselStyles)} />
@@ -28,9 +28,9 @@ const Carousel = ({ state, count, carousels }) => {
         className="carousel slide z-index-back me-px-lg-0 me-px-md-60"
       >
         <Slider className="carousel-inner">
-          { carousels && (
+          {carousels &&
             carousels.map((carousel, index) => {
-              return (              
+              return (
                 <Slide
                   key={index}
                   className="carousel-item pb-px-lg-50"
@@ -46,21 +46,28 @@ const Carousel = ({ state, count, carousels }) => {
                     <div className="position-absolute top-50 end-0">
                       <div className="me-px-50 mt-px-lg-145 mt-px-md-151">
                         <div className="bg-white mb-px-n-50 border-radius-home ps-px-30 pe-px-30 pt-px-28 pb-px-32">
-                          <h5 dangerouslySetInnerHTML={{ __html: carousel.title }}/>
-                          { carousel.sub_title && (
-                          <div className="pt-px-4">
-                            <h6 className="price" dangerouslySetInnerHTML={{ __html: carousel.sub_title }} />
-                          </div>
+                          <h5
+                            dangerouslySetInnerHTML={{ __html: carousel.title }}
+                          />
+                          {carousel.sub_title && (
+                            <div className="pt-px-4">
+                              <h6
+                                className="price"
+                                dangerouslySetInnerHTML={{
+                                  __html: carousel.sub_title,
+                                }}
+                              />
+                            </div>
                           )}
-                          { carousel.link && (
-                          <div className="mt-px-14">
-                            <Link
-                              className="h6 btn-link border-2 border-bottom shop-button-style"
-                              link={carousel.link.url}
-                            >
-                              {carousel.link.title}
-                            </Link>
-                          </div>
+                          {carousel.link && (
+                            <div className="mt-px-14">
+                              <Link
+                                className="h6 btn-link border-2 border-bottom shop-button-style"
+                                link={carousel.link.url}
+                              >
+                                {carousel.link.title}
+                              </Link>
+                            </div>
                           )}
                         </div>
                       </div>
@@ -68,8 +75,7 @@ const Carousel = ({ state, count, carousels }) => {
                   </div>
                 </Slide>
               );
-            }) 
-          )}         
+            })}
         </Slider>
         <ButtonBack className="carousel-control-prev">
           <span

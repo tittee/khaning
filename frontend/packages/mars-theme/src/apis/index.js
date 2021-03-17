@@ -46,3 +46,25 @@ export const acfPageID = {
     });
   },
 };
+
+export const PostTypeOrganic = {
+  pattern: "/organic",
+  func: async ({ route, state, libraries, params }) => {
+    // 1. Get ACF option page from REST API
+
+    const response = await libraries.source.api.get({
+      endpoint: `/wp/v2/organic`,
+      params: {
+        per_page: 6,
+      },
+    });
+    const fields = await response.json();
+    // 2. Add data to `source`.
+    const data = state.source.get(route);
+    console.log();
+    Object.assign(data, {
+      items: fields,
+      isOrganic: true,
+    });
+  },
+};

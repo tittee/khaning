@@ -30,7 +30,14 @@ const settings = {
       name: "@frontity/wp-source",
       state: {
         source: {
-          url: "http://khaning.test",
+          url: "http://khaning.test/",
+          postTypes: [
+            {
+              type: "organic",
+              endpoint: "organic",
+              archive: "/organic_category",
+            },
+          ],
         },
       },
     },

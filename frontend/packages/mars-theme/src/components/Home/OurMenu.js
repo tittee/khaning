@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "frontity";
 import imgHomeH8 from "./../../assets/images/home/h8.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane, faVials } from "@fortawesome/free-solid-svg-icons";
 import Link from "../link";
 
 const OurMenu = () => {
@@ -18,7 +20,10 @@ const OurMenu = () => {
           <div className="bg-saltpan pt-px-lg-81 pb-px-lg-83 ps-px-lg-40 pe-px-lg-40 pt-px-40 pb-px-40 ps-px-40 pe-px-40">
             <div className="row mb-px-5">
               <div className="col-lg-1 col-2">
-                <i className="fas fa-pepper-hot text-flame-pea icon-left-quote-34"></i>
+                <FontAwesomeIcon
+                  icon={faPaperPlane}
+                  className="text-flame-pea icon-left-quote-34"
+                />
               </div>
               <div className="col-lg-11 col-10">
                 <div className="text-start ms-px-lg-18">
@@ -40,7 +45,10 @@ const OurMenu = () => {
           <div className="bg-texture-image pt-px-lg-81 pb-px-lg-83 ps-px-lg-40 pe-px-lg-40 pt-px-40 pb-px-40 ps-px-40 pe-px-40">
             <div className="row mb-px-5">
               <div className="col-lg-1 col-2">
-                <i className="fab fa-uber text-flame-pea icon-left-quote-34"></i>
+                  <FontAwesomeIcon
+                  icon={faVials}
+                  className="text-flame-pea icon-left-quote-34"
+                />
               </div>
               <div className="col-lg-11 col-10">
                 <div className="text-start ms-px-lg-18">

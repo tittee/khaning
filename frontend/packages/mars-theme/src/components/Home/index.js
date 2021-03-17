@@ -7,14 +7,14 @@ import News from "./News";
 import OurMenu from "./OurMenu";
 
 const Home = ({ state }) => {
-  const data = state.source.get("/acf/pages/2").acf;  
+  const data = state.source.get("/acf/pages/2").acf;
 
   return (
     <>
       <Banner data={data} />
       <About whats_eggs_organic={data.whats_eggs_organic} />
       <Eggs />
-      <Products />
+      <Products />      
       <News />
       <OurMenu />
     </>
