@@ -7,7 +7,7 @@ import FeaturedMedia from "./../featured-media";
 
 import Link from "../link";
 
-const Products = ({ state, libraries, actions }) => {
+const Products = ({ state, actions }) => {
   // Get information about the current URL.
   const data = state.source.get("/organic");
   // Get the html2react component.

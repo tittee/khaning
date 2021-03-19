@@ -2,8 +2,8 @@ import { connect } from "frontity";
 import imgComp7 from "./../../assets/images/flowers/composition7.png";
 import Link from "../link";
 
-const About = ({ whats_eggs_organic }) => {
-  const lastItem = whats_eggs_organic.lists.length;
+const About = ({ whatsEggsOrganic }) => {
+  const lastItem = whatsEggsOrganic.lists.length;
 
   return (
     <div className="container mt-px-lg-120 mb-px-lg-120 mt-px-md-80 mb-px-md-80 mt-px-60 mb-px-60">
@@ -12,8 +12,8 @@ const About = ({ whats_eggs_organic }) => {
           <div className="position-relative">
             <img
               className="z-index-3 height-px-780 w-100 object-fit-cover"
-              src={whats_eggs_organic.image.url}
-              alt={whats_eggs_organic.image.alt}
+              src={whatsEggsOrganic.image.url}
+              alt={whatsEggsOrganic.image.alt}
             />
             <img
               className="z-index-flower position-absolute top-px-9 start-0 translate-middle"
@@ -24,20 +24,20 @@ const About = ({ whats_eggs_organic }) => {
         </div>
         <div className="col-lg-6 my-auto">
           <div className="ms-px-lg-32">
-            {whats_eggs_organic.sub_title && (
+            {whatsEggsOrganic.sub_title && (
               <h3 className="font-letter-space mb-px-8">
-                {whats_eggs_organic.sub_title}
+                {whatsEggsOrganic.sub_title}
               </h3>
             )}
-            <h2 className="mb-px-17">{whats_eggs_organic.title}</h2>
-            {whats_eggs_organic.description && (
+            <h2 className="mb-px-17">{whatsEggsOrganic.title}</h2>
+            {whatsEggsOrganic.description && (
               <div className="pe-px-lg-40 pb-px-36">
-                <p>{whats_eggs_organic.description}</p>
+                <p>{whatsEggsOrganic.description}</p>
               </div>
             )}
-            {whats_eggs_organic.lists && (
+            {whatsEggsOrganic.lists && (
               <div className="pe-px-lg-60">
-                {whats_eggs_organic.lists.map((item, index) => {
+                {whatsEggsOrganic.lists.map((item, index) => {
                   return (
                     <div
                       key={index}

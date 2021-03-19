@@ -10,7 +10,7 @@ import Home from "./Home";
 import Footer from "./footer";
 
 import styleCSS from "./../assets/css/style.css";
-import bootstrapCSS from "./../assets/css/bootstrap.min.css";
+import bootstrapCSS from "./../assets/css/bootstrap.css";
 import carouselCSS from "pure-react-carousel/dist/react-carousel.es.css";
 
 /**
@@ -33,9 +33,9 @@ const Theme = ({ state }) => {
       {/* Add some global styles for the whole site, like body or a's. 
       Not classes here because we use CSS-in-JS. Only global HTML tags. */}
       <Global styles={css(globalStyles)} /> 
-      <Global styles={css(bootstrapCSS)} />                  
-      <Global styles={css(carouselCSS)} />                  
+      <Global styles={css(bootstrapCSS)} />
       <Global styles={css(styleCSS)} />
+      <Global styles={css(carouselCSS)} />
 
       {/* Add the header of the site. */}      
       <HeadContainer>

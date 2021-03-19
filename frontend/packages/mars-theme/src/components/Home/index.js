@@ -12,11 +12,15 @@ const Home = ({ state }) => {
   return (
     <>
       <Banner data={data} />
-      <About whats_eggs_organic={data.whats_eggs_organic} />
-      <Eggs />
-      <Products />      
+      <About whatsEggsOrganic={data.whats_eggs_organic} />
+      <Eggs whatsManure={data.whats_manure} />
+      <Products />
       <News />
-      <OurMenu />
+      <OurMenu
+        ourMenusImage={data.our_menus_image}
+        howToShopping={data.how_to_shopping}
+        howToVisited={data.how_to_visited}
+      />
     </>
   );
 };
