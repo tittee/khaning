@@ -2,7 +2,7 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
-import { menuHandler, acfPageID, PostTypeOrganic } from "./apis";
+import { menuHandler, acfPageID, PostTypeOrganic, PostTypPost } from "./apis";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -46,6 +46,7 @@ const marsTheme = {
         await actions.source.fetch("/menu/primary-menu/");
         await actions.source.fetch("/acf/pages/2"); //HOMEPAGE or FRONTPAGE
         await actions.source.fetch("/organic");
+        await actions.source.fetch("/posts");
       },
     },
   },
@@ -59,7 +60,7 @@ const marsTheme = {
       processors: [image, iframe, link],
     },
     source: {
-      handlers: [menuHandler, acfPageID, PostTypeOrganic],
+      handlers: [menuHandler, acfPageID, PostTypeOrganic, PostTypPost],
     },
   },
 };

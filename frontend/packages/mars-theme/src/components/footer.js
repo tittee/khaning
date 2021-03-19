@@ -2,10 +2,15 @@
 import { connect } from "frontity";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faLinkedinIn, faFacebookSquare, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {
+  faLinkedinIn,
+  faFacebookSquare,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
-import imgFlowersF4 from "./../assets/images/flowers/f4.png";
-import imgFlowersF17 from "./../assets/images/flowers/f17.png";
+import imgComposition2 from "./../assets/images/flowers/composition2.png";
+import imgComposition5 from "./../assets/images/flowers/composition5.png";
 import Link from "./link";
 
 const footer = () => {
@@ -25,7 +30,7 @@ const footer = () => {
                   </h4>
                   <img
                     className="ms-px-n-45 d-lg-block d-none position-absolute top-px-5 start-px-n-115"
-                    src={imgFlowersF4}
+                    src={imgComposition5}
                     alt="hero flower image"
                   />
                 </div>
@@ -51,19 +56,19 @@ const footer = () => {
                 <div className="footer-widget footer-widget-2">
                   <ul className="pt-px-17">
                     <li>
-                      <Link link="page-partners.html">Certificates</Link>
+                      <Link link="/">Certificates</Link>
                     </li>
                     <li>
-                      <Link link="page-abuot-us.html">Platform</Link>
+                      <Link link="/">Platform</Link>
                     </li>
                     <li>
-                      <Link link="page-faq.html">FAQ </Link>
+                      <Link link="/">FAQ </Link>
                     </li>
                     <li>
-                      <Link link="page-contact.html">Legal & Privacy</Link>
+                      <Link link="/">Legal & Privacy</Link>
                     </li>
                     <li>
-                      <Link link="blog.html">Blog</Link>
+                      <Link link="/">Blog</Link>
                     </li>
                   </ul>
                 </div>
@@ -103,7 +108,7 @@ const footer = () => {
                 </div>
                 <img
                   className="position-absolute top-px-n-lg-10 end-px-n-lg-100 top-px-n-md-70 end-px-n-md-150"
-                  src={imgFlowersF17}
+                  src={imgComposition2}
                   alt="hero flower image"
                 />
               </div>
@@ -117,7 +122,7 @@ const footer = () => {
             <div className="col-lg-6 col-md-6">
               <div className="footer-widget text-md-start text-center">
                 <p className="m-md-0">
-                  © 2021 Energetic Themes • All Rights Reserved
+                  © 2564 ฟาร์มไก่ไข่ออร์แกนิค พระราม 2 • All Rights Reserved
                 </p>
               </div>
             </div>
@@ -125,22 +130,31 @@ const footer = () => {
               <div className="text-md-end text-center">
                 <ul className="list-unstyled list-inlinetrue">
                   <li className="list-inline-item me-px-21">
-                    <Link link="#">
-                      <FontAwesomeIcon className="icon" icon={faFacebookSquare} />
+                    <Link
+                      target="_blank"
+                      link="https://www.facebook.com/tayayningmee"
+                    >
+                      <FontAwesomeIcon
+                        className="icon"
+                        icon={faFacebookSquare}
+                      />
                     </Link>
                   </li>
                   <li className="list-inline-item me-px-21">
-                    <Link link="#">                      
+                    <Link
+                      target="_blank"
+                      link="https://www.instagram.com/bluenarysun/"
+                    >
                       <FontAwesomeIcon className="icon" icon={faInstagram} />
                     </Link>
                   </li>
                   <li className="list-inline-item me-px-21">
-                    <Link link="#">                      
+                    <Link link="/">
                       <FontAwesomeIcon className="icon" icon={faTwitter} />
                     </Link>
                   </li>
                   <li className="list-inline-item">
-                    <Link link="#">
+                    <Link link="/">
                       <FontAwesomeIcon className="icon" icon={faLinkedinIn} />
                     </Link>
                   </li>

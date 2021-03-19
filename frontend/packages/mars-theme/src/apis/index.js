@@ -26,7 +26,6 @@ export const menuHandler = {
   },
 };
 
-
 export const acfPageID = {
   pattern: "/acf/pages/:id",
   func: async ({ route, state, libraries, params }) => {
@@ -47,24 +46,48 @@ export const acfPageID = {
   },
 };
 
+// Custom Post Type : organic
 export const PostTypeOrganic = {
   pattern: "/organic",
-  func: async ({ route, state, libraries, params }) => {
+  func: async ({ route, state, libraries }) => {
     // 1. Get ACF option page from REST API
-
     const response = await libraries.source.api.get({
       endpoint: `/wp/v2/organic`,
-      params: {
+      params: {        
+        // ...(per_pages ? { per_page: per_pages } : {}),
         per_page: 6,
       },
-    });
+    });   
     const fields = await response.json();
     // 2. Add data to `source`.
     const data = state.source.get(route);
-    console.log();
+       
     Object.assign(data, {
       items: fields,
       isOrganic: true,
+    });
+  },
+};
+
+// Post Type : post
+export const PostTypPost = {
+  pattern: "/posts",
+  func: async ({ route, state, libraries }) => {
+    // 1. Get ACF option page from REST API
+    const response = await libraries.source.api.get({
+      endpoint: `/wp/v2/posts`,
+      params: {        
+        // ...(per_pages ? { per_page: per_pages } : {}),
+        per_page: 3,
+      },
+    });   
+    const fields = await response.json();
+    // 2. Add data to `source`.
+    const data = state.source.get(route);
+       
+    Object.assign(data, {
+      items: fields,
+      isPost: true,
     });
   },
 };

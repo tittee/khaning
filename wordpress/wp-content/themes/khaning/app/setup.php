@@ -240,3 +240,31 @@ function my_rest_api_init() {
 }
 add_action( 'rest_api_init', __NAMESPACE__ .'\\my_rest_api_init' );
 
+
+function add_category_name_data()
+{
+  //Last date
+  register_rest_field( 'post',
+    'category_name',
+    array(
+      'get_callback'    => __NAMESPACE__ . '\\rest_get_category_name',
+      'update_callback' => null,
+      'schema'          => null,
+    )
+  );
+}
+function rest_get_category_name( $object )
+{
+  //get the Post Id
+  $formatted_categories = array();
+
+  $categories = get_the_category( $object['categories'] );
+
+  foreach ( $categories as $category )
+  {
+    $formatted_categories = $category->name;
+  }
+
+  return $formatted_categories;
+}
+add_action( 'rest_api_init', __NAMESPACE__ . '\\add_category_name_data' );

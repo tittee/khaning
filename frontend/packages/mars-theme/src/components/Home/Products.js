@@ -10,13 +10,11 @@ import Link from "../link";
 const Products = ({ state, libraries, actions }) => {
   // Get information about the current URL.
   const data = state.source.get("/organic");
-
   // Get the html2react component.
-  const Html2React = libraries.html2react.Component;
+  // const Html2React = libraries.html2react.Component;
+
   useEffect(() => {
     actions.source.fetch("/organic");
-    // actions.source.fetch("/");
-    // List.preload();
   }, []);
 
   return (
@@ -27,41 +25,44 @@ const Products = ({ state, libraries, actions }) => {
             <h3 className="mb-px-md-52 mb-px-40">สินค้าของเรา</h3>
           </div>
           <div className="row gx-lg-5 gy-lg-6 card-post-style">
-            {
-              data.items.map((item) => {
-                // const post = state.source.organic[item.id];
-                // console.log(post);
-                
-
-                return (
-                  <div
-                    key={item.id}
-                    className="col-lg-4 mb-lg-0 mb-px-md-50 mb-px-40"
-                  >
-                    <article className="mb-lg-0 mb-px-md-40 mb-px-20">
-                      <Link link={item.link}>                        
-                        <FeaturedMedia id={item.featured_media} className="mb-px-18 height-px-456 w-100 object-fit-cover" />
-                      </Link>
-                      <h5 className="product-title">
-                        <Link link={item.link} dangerouslySetInnerHTML={{ __html: item.title.rendered }}></Link>
-                      </h5>
-                      <span className="price">
-                        <span className="amount">                          
-                          <span className="currencySymbol">{ item.acf.price }</span>
-                        </span>
+            {data.items.map((item) => {
+              return (
+                <div
+                  key={item.id}
+                  className="col-lg-4 mb-lg-0 mb-px-md-50 mb-px-40"
+                >
+                  <article className="mb-lg-0 mb-px-md-40 mb-px-20">
+                    <Link link={item.link}>
+                      <FeaturedMedia
+                        id={item.featured_media}
+                        className="mb-px-18 height-px-456 w-100 object-fit-cover"
+                      />
+                    </Link>
+                    <h5 className="product-title">
+                      <Link
+                        link={item.link}
+                        dangerouslySetInnerHTML={{
+                          __html: item.title.rendered,
+                        }}
+                      ></Link>
+                    </h5>
+                    <span className="price">
+                      <span className="amount">
+                        <span className="currencySymbol">{item.acf.price}</span>
                       </span>
-                      <div className="mt-px-14">
-                        <Link
-                          className="h6 btn-link border-2 border-bottom shop-button-style"
-                          link={item.link}
-                        >
-                          รายละเอียด
-                        </Link>
-                      </div>
-                    </article>
-                  </div>
-                );
-              })}
+                    </span>
+                    <div className="mt-px-14">
+                      <Link
+                        className="h6 btn-link border-2 border-bottom shop-button-style"
+                        link={item.link}
+                      >
+                        รายละเอียด
+                      </Link>
+                    </div>
+                  </article>
+                </div>
+              );
+            })}
           </div>
           <div className="text-center mt-px-lg-80">
             <Link className="btn btn-parsley" link="/organic">
