@@ -75,6 +75,13 @@ services:
       - /sessions
     depends_on:
       - mysql
+
+  smtp:
+    image: namshi/smtp
+    container_name: khaning_smtp
+    restart: "no"
+    ports:
+      - "25:25"
     
 volumes:
   db_data:

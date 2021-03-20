@@ -34,7 +34,9 @@ const marsTheme = {
         showOnPost: false,
       },
       templates : [
-        "about-us", "contact-us"
+        "2", //HOMEPAGE or FRONTPAGE
+        "6", //ABOUTUS
+        "8" //CONTACTUS
       ],
     },
   },
@@ -53,23 +55,17 @@ const marsTheme = {
       },
       beforeSSR: async ({ state, actions }) => {
         
-        // await actions.source.fetch("/acf/pages/2"); //HOMEPAGE or FRONTPAGE
-        // await actions.source.fetch("/organic");
-        // await actions.source.fetch("/posts");
-        // state.theme.templates.map((slug) =>
-        //   actions.source.fetch(`wp_template_part/${slug}`)
-        // ),
-
-        await Promise.all(
-          [
-            actions.source.fetch("/menu/primary-menu/"),
-            actions.source.fetch("/acf/options"),
-
-            state.theme.templates.map((slug) =>
-              actions.source.fetch(`wp_template_part/${slug}`)
-            ),
-          ],
-        );
+        await Promise.all([
+          actions.source.fetch("/menu/primary-menu/"),
+          actions.source.fetch("/acf/options"),
+          // actions.source.fetch("/acf/pages/2"), //HOMEPAGE or FRONTPAGE
+          actions.source.fetch("/organic"), //HOMEPAGE or FRONTPAGE
+          actions.source.fetch("/posts"), //HOMEPAGE or FRONTPAGE
+          
+          state.theme.templates.map((id) =>
+            actions.source.fetch(`/acf/pages/${id}`)
+          ),
+        ]);
       },
     },
   },

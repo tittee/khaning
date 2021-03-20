@@ -36,10 +36,24 @@ const settings = {
               type: "organic",
               endpoint: "organic",
               archive: "/organic_category",
+              params: {
+                per_page: 6,
+              },
             },
             {
               type: "wp_template_part",
               endpoint: "template-parts",
+            },
+          ],
+          taxonomies: [
+            {
+              taxonomy: "opdrachtgever",
+              endpoint: "opdrachtgever",
+              postTypeEndpoint: "portfolio",
+              params: {
+                per_page: 20,
+                _embed: true,
+              },
             },
           ],
         },
@@ -54,6 +68,7 @@ const settings = {
       },
     },
     "@frontity/html2react",
+    "frontity-contact-form-7",
   ],
 };
 

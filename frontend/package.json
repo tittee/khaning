@@ -27,6 +27,7 @@
     "@frontity/wp-source": "^1.11.1",
     "axios": "^0.21.1",
     "frontity": "^1.14.1",
+    "frontity-contact-form-7": "^0.1.7",
     "pure-react-carousel": "^1.27.6"
   },
   "devDependencies": {
