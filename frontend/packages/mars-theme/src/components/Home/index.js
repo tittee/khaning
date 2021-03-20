@@ -8,10 +8,10 @@ import News from "./News";
 import OurMenu from "./OurMenu";
 
 const Home = ({ state, actions }) => {  
-  const data = state.source.get("/acf/pages/2");  
+  const data = state.source.get("/pages/2").items;
 
   useEffect(() => {
-    actions.source.fetch("/acf/pages/2");
+    actions.source.fetch("/pages/2");
   }, []);
 
   return (

@@ -73,7 +73,7 @@ const HeroImage = ({ state, post }) => {
 };
 
 HeroImage.propTypes = {
-  post: PropTypes.array,
+  post: PropTypes.object.isRequired,
 };
 
 export default connect(HeroImage);

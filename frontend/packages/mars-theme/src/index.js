@@ -8,6 +8,7 @@ import {
   acfPageID,
   PostTypeOrganic,
   PostTypPost,
+  PageById
 } from "./apis";
 
 const marsTheme = {
@@ -57,13 +58,12 @@ const marsTheme = {
         
         await Promise.all([
           actions.source.fetch("/menu/primary-menu/"),
-          actions.source.fetch("/acf/options"),
-          // actions.source.fetch("/acf/pages/2"), //HOMEPAGE or FRONTPAGE
+          actions.source.fetch("/acf/options"),          
           actions.source.fetch("/organic"), //HOMEPAGE or FRONTPAGE
           actions.source.fetch("/posts"), //HOMEPAGE or FRONTPAGE
           
           state.theme.templates.map((id) =>
-            actions.source.fetch(`/acf/pages/${id}`)
+            actions.source.fetch(`/pages/${id}`)
           ),
         ]);
       },
@@ -85,6 +85,7 @@ const marsTheme = {
         acfPageID,
         PostTypeOrganic,
         PostTypPost,
+        PageById
       ],
     },
   },

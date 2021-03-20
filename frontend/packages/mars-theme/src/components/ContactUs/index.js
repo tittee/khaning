@@ -5,10 +5,11 @@ import imgComposition10 from "./../../assets/images/flowers/composition10.png";
 
 const ContactUs = ({ state, actions, libraries, pageId }) => {
   // Get information about the current URL.
-  const data = state.source.get("/acf/pages/" + pageId);
+  const data = state.source.get("/pages/" + pageId).items;
+  console.log(data);
 
   useEffect(() => {
-    actions.source.fetch("/acf/pages/" + pageId);
+    actions.source.fetch("/pages/" + pageId);
   }, []);
 
   // Get the html2react component.
@@ -32,7 +33,7 @@ const ContactUs = ({ state, actions, libraries, pageId }) => {
                 <div className="py-3 px-3">
                   <h4 className="mb-4">We're here to help</h4>
                   <p className="mb-0">
-                    If you have any questions about our website{" "}
+                    If you have any questions about our website
                   </p>
                   please email web@email.com, fill out the form or call +44
                   650.800.3124.

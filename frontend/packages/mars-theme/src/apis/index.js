@@ -114,8 +114,10 @@ export const PostTypPost = {
 /* Get data page by id */
 export const PageById = {
   pattern: "/pages/:id",
-  func: async ({ route, state, libraries }) => {
+  func: async ({ route, state, libraries, params }) => {
     // 1. Get ACF option page from REST API
+    const { id } = params;
+
     const response = await libraries.source.api.get({
       endpoint: `/wp/v2/pages/${id}`,
     });
@@ -125,7 +127,7 @@ export const PageById = {
 
     Object.assign(data, {
       items: fields,
-      isPost: true,
+      isPage: true,
     });
   },
 };

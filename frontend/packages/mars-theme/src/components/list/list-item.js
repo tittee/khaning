@@ -1,6 +1,7 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
+import Blog from "../Blog";
 
 /**
  * Item Component
@@ -13,71 +14,53 @@ import FeaturedMedia from "../featured-media";
 const Item = ({ state, item }) => {
   const author = state.source.author[item.author];
   const date = new Date(item.date);
-
   return (
-    <article>
-      <Link link={item.link}>
-        <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-      </Link>
+    <>    
+          <Blog item={item} />          
+      {/* <article>
+        <Link link={item.link}>
+          <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+        </Link>
 
-      <div>
-        {/* If the post has an author, we render a clickable author text. */}
-        {author && (
-          <StyledLink link={author.link}>
-            <AuthorName>
-              By <b>{author.name}</b>
-            </AuthorName>
-          </StyledLink>
+        <div>          
+          {author && (
+            <StyledLink link={author.link}>
+              <AuthorName>
+                By <b>{author.name}</b>
+              </AuthorName>
+            </StyledLink>
+          )}
+          <PublishDate>
+            {" "}
+            on <b>{date.toDateString()}</b>
+          </PublishDate>
+        </div>
+
+        
+        {state.theme.featured.showOnList && (
+          <FeaturedMedia id={item.featured_media} />
         )}
-        <PublishDate>
-          {" "}
-          on <b>{date.toDateString()}</b>
-        </PublishDate>
-      </div>
 
-      {/*
-       * If the want to show featured media in the
-       * list of featured posts, we render the media.
-       */}
-      {state.theme.featured.showOnList && (
-        <FeaturedMedia id={item.featured_media} />
-      )}
-
-      {/* If the post has an excerpt (short summary text), we render it */}
-      {item.excerpt && (
-        <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
-      )}
-    </article>
+        
+        {item.excerpt && (
+          <Excerpt
+            dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
+          />
+        )}
+      </article> */}
+    </>
   );
 };
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(Item);
 
-const Title = styled.h1`
-  font-size: 2rem;
-  color: rgba(12, 17, 43);
-  margin: 0;
-  padding-top: 24px;
-  padding-bottom: 8px;
-  box-sizing: border-box;
-`;
+const Title = styled.h1``;
 
-const AuthorName = styled.span`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-`;
+const AuthorName = styled.span``;
 
-const StyledLink = styled(Link)`
-  padding: 15px 0;
-`;
+const StyledLink = styled(Link)``;
 
-const PublishDate = styled.span`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-`;
+const PublishDate = styled.span``;
 
-const Excerpt = styled.div`
-  line-height: 1.6em;
-  color: rgba(12, 17, 43, 0.8);
-`;
+const Excerpt = styled.div``;

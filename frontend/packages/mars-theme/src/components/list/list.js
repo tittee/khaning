@@ -1,6 +1,7 @@
 import { connect, styled, decode } from "frontity";
 import Item from "./list-item";
 import Pagination from "./pagination";
+import FixBanner from "./FixBanner";
 
 const List = ({ state }) => {
   // Get the data of the current list.
@@ -9,26 +10,18 @@ const List = ({ state }) => {
   return (
     <Container>
       {/* If the list is a taxonomy, we render a title. */}
-      {data.isTaxonomy && (
-        <Header>
-          {data.taxonomy}:{" "}
-          <b>{decode(state.source[data.taxonomy][data.id].name)}</b>
-        </Header>
-      )}
+      {data.isTaxonomy && <FixBanner id={data.id} taxonomy={data.taxonomy} />}
 
-      {/* If the list is for a specific author, we render a title. */}
-      {data.isAuthor && (
-        <Header>
-          Author: <b>{decode(state.source.author[data.id].name)}</b>
-        </Header>
-      )}
-
-      {/* Iterate over the items of the list. */}
-      {data.items.map(({ type, id }) => {
-        const item = state.source[type][id];
-        // Render one Item component for each one.
-        return <Item key={item.id} item={item} />;
-      })}
+      <div class="container mt-lg-8 mt-md-6 mt-5 pb-lg-8 pb-md-6 pb-5">
+        <div class="row gx-lg-5 gy-lg-5 gy-3 gx-3 blog-post card-post-style posts-bg-white">
+          {/* Iterate over the items of the list. */}
+          {data.items.map(({ type, id }) => {
+            const item = state.source[type][id];
+            // Render one Item component for each one.
+            return <Item key={item.id} item={item} />;
+          })}
+        </div>
+      </div>
       <Pagination />
     </Container>
   );
@@ -36,15 +29,6 @@ const List = ({ state }) => {
 
 export default connect(List);
 
-const Container = styled.section`
-  width: 800px;
-  margin: 0;
-  padding: 24px;
-  list-style: none;
-`;
+const Container = styled.section``;
 
-const Header = styled.h3`
-  font-weight: 300;
-  text-transform: capitalize;
-  color: rgba(12, 17, 43, 0.9);
-`;
+const Header = styled.h3``;
