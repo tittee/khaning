@@ -19,7 +19,7 @@ const News = ({state, actions}) => {
           <div className="text-center mb-px-lg-62 mb-px-lg-52 mb-px-40">
             <h3>บทความ</h3>
           </div>
-          <div className="container pb-px-lg-66">
+          <div className="container pb-px-lg-0">
             <div className="row gx-lg-5 gy-lg-5 gy-3 gx-3 blog-post card-post-style">
               {data.items.map((item) => {
                 return (

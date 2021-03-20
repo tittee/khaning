@@ -1,6 +1,7 @@
-// import React from 'react';
+import React from "react";
 import { connect } from "frontity";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { renderSocial } from "../utils/GlobalFunction";
 
 import {
   faLinkedinIn,
@@ -13,7 +14,19 @@ import imgComposition2 from "./../assets/images/flowers/composition2.png";
 import imgComposition5 from "./../assets/images/flowers/composition5.png";
 import Link from "./link";
 
-const footer = () => {
+
+export const renderSocial = (url, icon) => {
+  return (
+    <li className="list-inline-item me-px-21">
+      <Link target="_blank" link={url}>
+        <FontAwesomeIcon className="icon" icon={icon} />
+      </Link>
+    </li>
+  );
+};
+
+
+const footer = ({ acf }) => {
   return (
     <footer className="site-footer bg-texture-image overflow-hidden">
       <div className="footer-widgets">
@@ -22,11 +35,9 @@ const footer = () => {
             <div className="col-lg-4">
               <div className="position-relative">
                 <div className="footer-widget footer-widget-1">
-                  <h2 className="mb-px-36">
-                    Eat nutritious food because it makes your health so good.
-                  </h2>
+                  <h2 className="mb-px-36">{acf.eat_eggs_organic}</h2>
                   <h4 className="text-flame-pea base-font-family text-uppercase">
-                    Oganic
+                    KHANING ORGANIC
                   </h4>
                   <img
                     className="ms-px-n-45 d-lg-block d-none position-absolute top-px-5 start-px-n-115"
@@ -38,37 +49,37 @@ const footer = () => {
             </div>
             <div className="col-lg-2 col-md-6 col-12 mt-lg-0 mt-md-5 mt-4">
               <div className="ms-px-lg-9">
-                <h5 className="mb-px-16">Get in touch</h5>
-                <p className="footer-text-size mb-5">info@address.com</p>
+                <h5 className="mb-px-16">Contact Me</h5>
+                <p className="footer-text-size mb-5">tee.emilond@gmail.com</p>
                 <div className="pt-1">
-                  <h5 className="mb-px-28">Headquarters</h5>
+                  <h5 className="mb-px-28">Address</h5>
                 </div>
                 <div className="pe-px-lg-0 pe-px-md-60 pe-px-40">
                   <p className="footer-text-size mb-4">
-                    9235 Bayberry Drive Hendersonville, NC 28792
+                    385 Rama 2 Soi 28 Yek 5, Chom Thong Rd, Chom Thong, Chom Thong, Bangkok Thailand 10150
                   </p>
                 </div>
               </div>
             </div>
             <div className="col-lg-2 col-md-6 col-12 mt-lg-0 mt-md-5 mt-4">
               <div className="ms-px-lg-14">
-                <h5>Useful</h5>
+                <h5>Links</h5>
                 <div className="footer-widget footer-widget-2">
-                  <ul className="pt-px-17">
+                  <ul className="pt-px-3">
                     <li>
-                      <Link link="/">Certificates</Link>
+                      <Link link="/">About Me</Link>
                     </li>
                     <li>
-                      <Link link="/">Platform</Link>
+                      <Link link="/">About GraphQL</Link>
                     </li>
                     <li>
-                      <Link link="/">FAQ </Link>
+                      <Link link="/">About React.Js</Link>
                     </li>
                     <li>
-                      <Link link="/">Legal & Privacy</Link>
+                      <Link link="/">About Grasby.JS</Link>
                     </li>
                     <li>
-                      <Link link="/">Blog</Link>
+                      <Link link="/">About MobX</Link>
                     </li>
                   </ul>
                 </div>
@@ -77,10 +88,9 @@ const footer = () => {
             <div className="col-lg-4 col-md-6 col-12">
               <div className="position-relative">
                 <div className="ms-px-lg-13">
-                  <h5 className="mb-px-16">Newsletter</h5>
+                  <h5 className="mb-px-16">รับสมัครข่าวสาร</h5>
                   <p className="footer-text-size mb-4">
-                    Sign up here to get the latest news, updates and special
-                    offers delivered to your inbox.
+                    ติดตามข่าวสารใหม่จากเราได้ เพื่อรับข้อมูลข่าวสารใหม่ๆ รวมถึงกิจกรรมดีๆ จากฟาร์มคะนิ้ง
                   </p>
                   <form id="contact-form" method="post">
                     <div className="mb-px-20 pb-2">
@@ -121,46 +131,23 @@ const footer = () => {
           <div className="row gx-5">
             <div className="col-lg-6 col-md-6">
               <div className="footer-widget text-md-start text-center">
-                <p className="m-md-0">
-                  © 2564 ฟาร์มไก่ไข่ออร์แกนิค พระราม 2 • All Rights Reserved
-                </p>
+                <p className="m-md-0">{acf.copyright}</p>
               </div>
             </div>
-            <div className="col-lg-6 col-md-6">
-              <div className="text-md-end text-center">
-                <ul className="list-unstyled list-inlinetrue">
-                  <li className="list-inline-item me-px-21">
-                    <Link
-                      target="_blank"
-                      link="https://www.facebook.com/tayayningmee"
-                    >
-                      <FontAwesomeIcon
-                        className="icon"
-                        icon={faFacebookSquare}
-                      />
-                    </Link>
-                  </li>
-                  <li className="list-inline-item me-px-21">
-                    <Link
-                      target="_blank"
-                      link="https://www.instagram.com/bluenarysun/"
-                    >
-                      <FontAwesomeIcon className="icon" icon={faInstagram} />
-                    </Link>
-                  </li>
-                  <li className="list-inline-item me-px-21">
-                    <Link link="/">
-                      <FontAwesomeIcon className="icon" icon={faTwitter} />
-                    </Link>
-                  </li>
-                  <li className="list-inline-item">
-                    <Link link="/">
-                      <FontAwesomeIcon className="icon" icon={faLinkedinIn} />
-                    </Link>
-                  </li>
-                </ul>
+
+            {acf.socials && (
+              /* Can use reuseable function */
+              <div className="col-lg-6 col-md-6">
+                <div className="text-md-end text-center">
+                  <ul className="list-unstyled list-inlinetrue">
+                    {acf.socials.facebook && renderSocial(acf.socials.facebook.url, faFacebookSquare) }                                        
+                    {acf.socials.instagram && renderSocial(acf.socials.instagram.url, faInstagram) }                                        
+                    {acf.socials.twitter && renderSocial(acf.socials.twitter.url, faTwitter) }                                        
+                    {acf.socials.line && renderSocial(acf.socials.twitter.url, faLinkedinIn) }
+                  </ul>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

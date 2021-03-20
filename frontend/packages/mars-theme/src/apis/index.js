@@ -26,6 +26,25 @@ export const menuHandler = {
   },
 };
 
+// ACF Option : Option
+export const acfThemeOption = {
+  pattern: "/acf/options",
+  func: async ({ route, state, libraries }) => {
+    // 1. Get ACF option page from REST API
+    const response = await libraries.source.api.get({
+      endpoint: `/acf/v3/options/options`,      
+    });   
+    const fields = await response.json();
+    // 2. Add data to `source`.
+    const data = state.source.get(route);
+       
+    Object.assign(data, {
+      acf: fields.acf,
+      isPost: true,
+    });
+  },
+};
+
 export const acfPageID = {
   pattern: "/acf/pages/:id",
   func: async ({ route, state, libraries, params }) => {
@@ -85,6 +104,25 @@ export const PostTypPost = {
     // 2. Add data to `source`.
     const data = state.source.get(route);
        
+    Object.assign(data, {
+      items: fields,
+      isPost: true,
+    });
+  },
+};
+
+/* Get data page by id */
+export const PageById = {
+  pattern: "/pages/:id",
+  func: async ({ route, state, libraries }) => {
+    // 1. Get ACF option page from REST API
+    const response = await libraries.source.api.get({
+      endpoint: `/wp/v2/pages/${id}`,
+    });
+    const fields = await response.json();
+    // 2. Add data to `source`.
+    const data = state.source.get(route);
+
     Object.assign(data, {
       items: fields,
       isPost: true,

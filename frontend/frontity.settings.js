@@ -37,6 +37,10 @@ const settings = {
               endpoint: "organic",
               archive: "/organic_category",
             },
+            {
+              type: "wp_template_part",
+              endpoint: "template-parts",
+            },
           ],
         },
       },

@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 
-import imgFlowersF6 from "./../../assets/images/flowers/f6.png";
-import imgFlowersF5 from "./../../assets/images/flowers/f5.png";
 import FeaturedMedia from "./../featured-media";
 
 import Link from "../link";
@@ -69,16 +67,6 @@ const Products = ({ state, actions }) => {
               ดูทั้งหมด
             </Link>
           </div>
-          <img
-            className="d-lg-block d-none position-absolute bottom-px-n-lg-8 start-px-n-lg-41"
-            src={imgFlowersF6}
-            alt="f6 flower image"
-          />
-          <img
-            className="d-lg-block d-none position-absolute top-px-n-lg-0 end-px-n-lg-37"
-            src={imgFlowersF5}
-            alt="f5 flower image"
-          />
         </div>
       </div>
     </div>

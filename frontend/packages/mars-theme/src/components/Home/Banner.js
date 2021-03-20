@@ -6,7 +6,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Carousel from "./Carousel";
 import Link from "../link";
 
-const Banner = ({ data }) => {
+const Banner = ({ bannerButton, bannerContent, bannerLists, bannerSubtitle, bannerTitle, bannerEditor, carousels }) => {
   return (
     <>
       <div className="bg-texture-image pt-px-lg-120 pb-px-lg-120 pt-px-md-80 pb-px-md-70 pt-px-30 pb-px-60 overflow-hidden">
@@ -20,25 +20,25 @@ const Banner = ({ data }) => {
             <div className="col-lg-5 order-lg-1 mb-lg-0 mb-px-md-40 mb-px-30">
               <div className="position-relative">
                 <Carousel
-                  count={data.carousels.length}
-                  carousels={data.carousels}
+                  count={carousels.length}
+                  carousels={carousels}
                 />
               </div>
             </div>
-            <div className="col-lg-7 my-auto pe-px-lg-150">
+            <div className="col-lg-7 my-auto pe-px-lg-20">
               <div className="me-px-lg-100 me-px-md-60">
                 <h5
                   className="font-letter-space mb-px-8"
-                  dangerouslySetInnerHTML={{ __html: data.banner_subtitle }}
+                  dangerouslySetInnerHTML={{ __html: bannerSubtitle }}
                 />
                 <h1
                   className="hero-font mb-px-28"
-                  dangerouslySetInnerHTML={{ __html: data.banner_title }}
+                  dangerouslySetInnerHTML={{ __html: bannerTitle }}
                 />
 
-                {data.banner_content.value === "lists" ? (
+                {bannerContent.value === "lists" ? (
                   <ul className="list-unstyled">
-                    {data.banner_lists.map((list) => {
+                    {bannerLists.map((list) => {
                       return (
                         <li key={list.text} className="mb-px-12">
                           <FontAwesomeIcon
@@ -52,15 +52,15 @@ const Banner = ({ data }) => {
                   </ul>
                 ) : (
                   <div
-                    dangerouslySetInnerHTML={{ __html: data.banner_editor }}
+                    dangerouslySetInnerHTML={{ __html: bannerEditor }}
                   ></div>
                 )}
-                {data.banner_button && (
+                {bannerButton && (
                   <Link
                     className="btn btn-parsley"
-                    link={data.banner_button.url}
+                    link={bannerButton.url}
                   >
-                    {data.banner_button.title}
+                    {bannerButton.title}
                   </Link>
                 )}
               </div>

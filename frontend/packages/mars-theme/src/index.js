@@ -2,7 +2,13 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 import link from "@frontity/html2react/processors/link";
-import { menuHandler, acfPageID, PostTypeOrganic, PostTypPost } from "./apis";
+import {
+  menuHandler,
+  acfThemeOption,
+  acfPageID,
+  PostTypeOrganic,
+  PostTypPost,
+} from "./apis";
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -27,6 +33,9 @@ const marsTheme = {
         showOnList: false,
         showOnPost: false,
       },
+      templates : [
+        "about-us", "contact-us"
+      ],
     },
   },
 
@@ -42,11 +51,25 @@ const marsTheme = {
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
       },
-      beforeSSR: async ({ actions }) => {
-        await actions.source.fetch("/menu/primary-menu/");
-        await actions.source.fetch("/acf/pages/2"); //HOMEPAGE or FRONTPAGE
-        await actions.source.fetch("/organic");
-        await actions.source.fetch("/posts");
+      beforeSSR: async ({ state, actions }) => {
+        
+        // await actions.source.fetch("/acf/pages/2"); //HOMEPAGE or FRONTPAGE
+        // await actions.source.fetch("/organic");
+        // await actions.source.fetch("/posts");
+        // state.theme.templates.map((slug) =>
+        //   actions.source.fetch(`wp_template_part/${slug}`)
+        // ),
+
+        await Promise.all(
+          [
+            actions.source.fetch("/menu/primary-menu/"),
+            actions.source.fetch("/acf/options"),
+
+            state.theme.templates.map((slug) =>
+              actions.source.fetch(`wp_template_part/${slug}`)
+            ),
+          ],
+        );
       },
     },
   },
@@ -60,7 +83,13 @@ const marsTheme = {
       processors: [image, iframe, link],
     },
     source: {
-      handlers: [menuHandler, acfPageID, PostTypeOrganic, PostTypPost],
+      handlers: [
+        menuHandler,
+        acfThemeOption,
+        acfPageID,
+        PostTypeOrganic,
+        PostTypPost,
+      ],
     },
   },
 };
