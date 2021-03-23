@@ -6,7 +6,7 @@ import { PropTypes } from "prop-types";
 import imgComposition3 from "./../../assets/images/flowers/composition3.png";
 import imgComposition6 from "./../../assets/images/flowers/composition6.png";
 
-import FeaturedMedia from "./../featured-media";
+import FeaturedMedia from "../featured-media";
 import PostInfo from "./PostInfo";
 import PostContent from "./PostContent";
 
