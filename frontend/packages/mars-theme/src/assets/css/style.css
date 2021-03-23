@@ -10,6 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: @@pkg.textdomain
 Tags: one-column, custom-colors, editor-style, custom-logo, custom-menu, featured-images, theme-options, translation-ready, blog, photography
 */
+
 /*--------------------------------------------------------------
 TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -39,6 +40,7 @@ TABLE OF CONTENTS:
 # Widgets
 # Utilities
 */
+
 img {
   max-width: 100%;
   height: auto;
@@ -47,16 +49,17 @@ img {
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Main
 --------------------------------------------------------------*/
+
 @media (min-width: 576px) {
   .large-gutters {
     margin-right: -25px;
     margin-left: -25px;
   }
-  .large-gutters > .col,
-  .large-gutters > [class*='col-'] {
+  .large-gutters>.col, .large-gutters>[class*='col-'] {
     padding-right: 25px;
     padding-left: 25px;
   }
@@ -67,8 +70,7 @@ img {
     margin-right: -60px;
     margin-left: -60px;
   }
-  .xl-gutters > .col,
-  .xl-gutters > [class*='col-'] {
+  .xl-gutters>.col, .xl-gutters>[class*='col-'] {
     padding-right: 60px;
     padding-left: 60px;
   }
@@ -81,6 +83,7 @@ img {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
 @media (max-width: 991.98px) {
   .site-header .navbar-collapse {
     margin-top: 20px;
@@ -315,15 +318,16 @@ img {
 /*--------------------------------------------------------------
 # Page main title
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 @media (min-width: 992px) {
-  .site-footer ol,
-  .site-footer ul {
+  .site-footer ol, .site-footer ul {
     -webkit-padding-start: 1rem;
-       -moz-padding-start: 1rem;
-            padding-inline-start: 1rem;
+    -moz-padding-start: 1rem;
+    padding-inline-start: 1rem;
   }
 }
 
@@ -364,15 +368,15 @@ img {
 
 .site-footer .footer-widgets .footer-widget ul ul {
   -webkit-padding-start: 0rem;
-     -moz-padding-start: 0rem;
-          padding-inline-start: 0rem;
+  -moz-padding-start: 0rem;
+  padding-inline-start: 0rem;
 }
 
 @media (min-width: 992px) {
   .site-footer .footer-widgets .footer-widget ul ul {
     -webkit-padding-start: 1rem;
-       -moz-padding-start: 1rem;
-            padding-inline-start: 1rem;
+    -moz-padding-start: 1rem;
+    padding-inline-start: 1rem;
   }
 }
 
@@ -440,6 +444,7 @@ img {
 /*--------------------------------------------------------------
 # Posts
 --------------------------------------------------------------*/
+
 .blog-post .entry-media {
   margin-bottom: 0;
 }
@@ -497,7 +502,7 @@ img {
   color: #000000;
 }
 
-.blog-post .entry-content-wrapper .entry-content > p {
+.blog-post .entry-content-wrapper .entry-content>p {
   margin-bottom: 0;
 }
 
@@ -530,7 +535,7 @@ img {
   color: #2A5631;
 }
 
-.blog-post .entry-content1-wrapper .entry-content > p {
+.blog-post .entry-content1-wrapper .entry-content>p {
   margin-bottom: 0;
 }
 
@@ -675,15 +680,13 @@ a.entry-read-more {
   border-bottom-left-radius: 10px;
 }
 
-.single-post .entry-footer,
-.container-small {
+.single-post .entry-footer, .container-small {
   margin-right: auto;
   margin-left: auto;
 }
 
 @media (max-width: 991.98px) {
-  .single-post .entry-footer,
-  .container-small {
+  .single-post .entry-footer, .container-small {
     padding-right: 0.75rem;
     padding-left: 0.75rem;
   }
@@ -720,6 +723,7 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+
 .property-block {
   margin-bottom: 57px;
 }
@@ -749,6 +753,7 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Shop
 --------------------------------------------------------------*/
+
 .price {
   font-size: 1rem;
   font-family: "Roboto";
@@ -760,12 +765,14 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Search
 --------------------------------------------------------------*/
+
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .openBtn {
@@ -837,8 +844,10 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Jetpack
 --------------------------------------------------------------*/
+
 /* =Infinity Styles
 -------------------------------------------------------------- */
+
 .infinite-loader {
   color: #000;
   display: block;
@@ -848,8 +857,8 @@ p.has-drop-cap:not(:focus):first-letter {
   bottom: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 #infinite-handle {
@@ -869,9 +878,11 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Accordion
 --------------------------------------------------------------*/
+
 .accordion .card {
   background-color: transparent;
 }
@@ -911,6 +922,7 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
+
 .position {
   position: absolute;
   fill: #ffffff;
@@ -946,9 +958,11 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Fields
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Countdown
 --------------------------------------------------------------*/
+
 .countdown .countdown_value {
   font-size: calc(1.375rem + 1.5vw);
   font-weight: 700;
@@ -975,6 +989,7 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Icons
 --------------------------------------------------------------*/
+
 .round-icon-list {
   padding-left: 0;
   list-style: none;
@@ -1001,9 +1016,11 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Testimonial
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+
 .member-content {
   background-color: #ffffff;
   padding-left: 30px;
@@ -1031,13 +1048,13 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
+
 .small-gutters {
   margin-right: -5px;
   margin-left: -5px;
 }
 
-.small-gutters > .col,
-.small-gutters > [class*='col-'] {
+.small-gutters>.col, .small-gutters>[class*='col-'] {
   padding-right: 5px;
   padding-left: 5px;
 }
@@ -1050,11 +1067,10 @@ p.has-drop-cap:not(:focus):first-letter {
   display: flex;
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-.gallery-gutters > .col,
-.gallery-gutters > [class*='col-'] {
+.gallery-gutters>.col, .gallery-gutters>[class*='col-'] {
   padding: 15px;
 }
 
@@ -1062,8 +1078,7 @@ p.has-drop-cap:not(:focus):first-letter {
   margin: -5px;
 }
 
-.small-gallery-gutters > .col,
-.small-gallery-gutters > [class*='col-'] {
+.small-gallery-gutters>.col, .small-gallery-gutters>[class*='col-'] {
   padding: 5px;
 }
 
@@ -1071,14 +1086,14 @@ p.has-drop-cap:not(:focus):first-letter {
   margin: -2.5px;
 }
 
-.xs-gallery-gutters > .col,
-.xs-gallery-gutters > [class*='col-'] {
+.xs-gallery-gutters>.col, .xs-gallery-gutters>[class*='col-'] {
   padding: 2.5px;
 }
 
 /*--------------------------------------------------------------
 # Pricing table
 --------------------------------------------------------------*/
+
 .pricing-table-item {
   margin-bottom: 2rem;
   padding: 3rem 3rem;
@@ -1121,6 +1136,7 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # iframe
 --------------------------------------------------------------*/
+
 .map-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -1139,12 +1155,15 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # text-image-box
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Modules
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
+
 .screen-reader-text {
   position: absolute !important;
   width: 1px !important;
@@ -1172,6 +1191,7 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Slider
 --------------------------------------------------------------*/
+
 .heme-carousel .carousel-item {
   min-height: 666px;
   background: #000000;
@@ -1200,6 +1220,7 @@ p.has-drop-cap:not(:focus):first-letter {
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
+
 .comment-meta {
   position: relative;
 }
@@ -1426,19 +1447,15 @@ article.comment-body {
   border: none;
 }
 
-.bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
+.bypostauthor>.comment-body>.comment-meta>.comment-author .avatar {
   -webkit-box-shadow: 0 0 0 2px #000000;
-          box-shadow: 0 0 0 2px #000000;
+  box-shadow: 0 0 0 2px #000000;
   padding: 5px;
   top: 2px;
   position: relative;
 }
 
-.comment.depth-3 p,
-.comment.depth-4 p,
-.comment.depth-5 p,
-.comment.depth-6 p,
-.comment.depth-7 p {
+.comment.depth-3 p, .comment.depth-4 p, .comment.depth-5 p, .comment.depth-6 p, .comment.depth-7 p {
   width: 100%;
   margin-right: 0;
   margin-left: 0;
@@ -1536,9 +1553,11 @@ body.has-no-comments .comment-respond {
 /*--------------------------------------------------------------
 # 404
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+
 .widget {
   margin-bottom: 4rem;
 }
@@ -1553,51 +1572,26 @@ body.has-no-comments .comment-respond {
   text-transform: uppercase;
 }
 
-.widget ol,
-.widget ul {
+.widget ol, .widget ul {
   -webkit-padding-start: 1.25rem;
-     -moz-padding-start: 1.25rem;
-          padding-inline-start: 1.25rem;
+  -moz-padding-start: 1.25rem;
+  padding-inline-start: 1.25rem;
 }
 
-.widget_pages ul li,
-.widget_recent_comments ul li,
-.widget_meta ul li,
-.widget_recent_entries ul li,
-.widget_archive ul li,
-.widget_categories ul li,
-.widget_product_categories ul li {
+.widget_pages ul li, .widget_recent_comments ul li, .widget_meta ul li, .widget_recent_entries ul li, .widget_archive ul li, .widget_categories ul li, .widget_product_categories ul li {
   width: 100%;
 }
 
-.widget_pages ul li a,
-.widget_recent_comments ul li a,
-.widget_meta ul li a,
-.widget_recent_entries ul li a,
-.widget_archive ul li a,
-.widget_categories ul li a,
-.widget_product_categories ul li a {
+.widget_pages ul li a, .widget_recent_comments ul li a, .widget_meta ul li a, .widget_recent_entries ul li a, .widget_archive ul li a, .widget_categories ul li a, .widget_product_categories ul li a {
   display: inline-block;
   padding: 0.5rem 0;
 }
 
-.widget_pages > ul,
-.widget_recent_comments > ul,
-.widget_meta > ul,
-.widget_recent_entries > ul,
-.widget_archive > ul,
-.widget_categories > ul,
-.widget_product_categories > ul {
+.widget_pages>ul, .widget_recent_comments>ul, .widget_meta>ul, .widget_recent_entries>ul, .widget_archive>ul, .widget_categories>ul, .widget_product_categories>ul {
   list-style: none;
 }
 
-.widget_pages > ul > li::before,
-.widget_recent_comments > ul > li::before,
-.widget_meta > ul > li::before,
-.widget_recent_entries > ul > li::before,
-.widget_archive > ul > li::before,
-.widget_categories > ul > li::before,
-.widget_product_categories > ul > li::before {
+.widget_pages>ul>li::before, .widget_recent_comments>ul>li::before, .widget_meta>ul>li::before, .widget_recent_entries>ul>li::before, .widget_archive>ul>li::before, .widget_categories>ul>li::before, .widget_product_categories>ul>li::before {
   content: '';
   display: inline-block;
   width: 13px;
@@ -1663,8 +1657,7 @@ body.has-no-comments .comment-respond {
   display: block;
 }
 
-.search-form .form-control,
-.search-form .btn {
+.search-form .form-control, .search-form .btn {
   border-color: #e4e4e4;
 }
 
@@ -1677,15 +1670,26 @@ body.has-no-comments .comment-respond {
 /*--------------------------------------------------------------
 # Utilities
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Night Mode
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # Custom CSS
 --------------------------------------------------------------*/
+
 .object-fit-cover {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
+}
+
+.object-position-top {
+  object-position: top;
+}
+
+.object-position-center {
+  object-position: center;
 }
 
 @media (min-width: 992px) {
@@ -2612,12 +2616,12 @@ body.has-no-comments .comment-respond {
   border-color: #BC5E49;
 }
 
-.list-group-horizontal > .list-group-item + .list-group-item {
+.list-group-horizontal>.list-group-item+.list-group-item {
   border-top-width: 3px;
   border-left-width: 3px;
 }
 
-.list-group-horizontal > .list-group-item + .list-group-item.active {
+.list-group-horizontal>.list-group-item+.list-group-item.active {
   border-top-width: 3px;
   border-left-width: 3px;
 }

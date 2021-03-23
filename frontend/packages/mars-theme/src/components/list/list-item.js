@@ -1,7 +1,7 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
-import Blog from "../Blog";
+// import Blog from "../Blog";
 
 /**
  * Item Component
@@ -15,8 +15,8 @@ const Item = ({ state, item }) => {
   const author = state.source.author[item.author];
   const date = new Date(item.date);
   return (
-    <>    
-          <Blog item={item} />          
+    <>
+      {/* <Blog item={item} />           */}
       {/* <article>
         <Link link={item.link}>
           <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />

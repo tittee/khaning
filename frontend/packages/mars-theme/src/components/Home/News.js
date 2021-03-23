@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "frontity";
 import Link from "../link";
-import Blog from "./../Blog";
+// import Blog from "./../Blog"; 
 
 const News = ({state, actions}) => {
   // Get information about the current URL.
@@ -21,7 +21,7 @@ const News = ({state, actions}) => {
           <div className="container pb-px-lg-0">
             <div className="row gx-lg-5 gy-lg-5 gy-3 gx-3 blog-post card-post-style">
               {data.items.map((item) => {
-                return <Blog key={item.id} item={item} />;
+                return <>div</>;
               })}
             </div>
             <div className="text-center mt-lg-5 mt-2">

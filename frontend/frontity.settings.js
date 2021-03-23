@@ -21,7 +21,7 @@ const settings = {
           ],
           featured: {
             showOnList: false,
-            showOnPost: false,
+            showOnPost: true,
           },
         },
       },
@@ -63,7 +63,7 @@ const settings = {
       name: "@frontity/tiny-router",
       state: {
         router: {
-          autoFetch: false,
+          autoFetch: true,
         },
       },
     },
