@@ -1,7 +1,7 @@
+import React from "react";
 import { connect, styled } from "frontity";
 import Link from "../link";
-import FeaturedMedia from "../featured-media";
-// import Blog from "../Blog";
+import SingleItem from "../Single/Item";
 
 /**
  * Item Component
@@ -12,42 +12,9 @@ import FeaturedMedia from "../featured-media";
  * - FeaturedMedia: the featured image/video of the post
  */
 const Item = ({ state, item }) => {
-  const author = state.source.author[item.author];
-  const date = new Date(item.date);
   return (
     <>
-      {/* <Blog item={item} />           */}
-      {/* <article>
-        <Link link={item.link}>
-          <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-        </Link>
-
-        <div>          
-          {author && (
-            <StyledLink link={author.link}>
-              <AuthorName>
-                By <b>{author.name}</b>
-              </AuthorName>
-            </StyledLink>
-          )}
-          <PublishDate>
-            {" "}
-            on <b>{date.toDateString()}</b>
-          </PublishDate>
-        </div>
-
-        
-        {state.theme.featured.showOnList && (
-          <FeaturedMedia id={item.featured_media} />
-        )}
-
-        
-        {item.excerpt && (
-          <Excerpt
-            dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
-          />
-        )}
-      </article> */}
+      <SingleItem key={item.id} item={item} isHome={false} />      
     </>
   );
 };

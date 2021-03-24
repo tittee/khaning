@@ -32,12 +32,12 @@ export const acfThemeOption = {
   func: async ({ route, state, libraries }) => {
     // 1. Get ACF option page from REST API
     const response = await libraries.source.api.get({
-      endpoint: `/acf/v3/options/options`,      
-    });   
+      endpoint: `/acf/v3/options/options`,
+    });
     const fields = await response.json();
     // 2. Add data to `source`.
     const data = state.source.get(route);
-       
+
     Object.assign(data, {
       acf: fields.acf,
       isPost: true,
@@ -72,15 +72,15 @@ export const PostTypeOrganic = {
     // 1. Get ACF option page from REST API
     const response = await libraries.source.api.get({
       endpoint: `/wp/v2/organic`,
-      params: {        
+      params: {
         // ...(per_pages ? { per_page: per_pages } : {}),
         per_page: 6,
       },
-    });   
+    });
     const fields = await response.json();
     // 2. Add data to `source`.
     const data = state.source.get(route);
-       
+
     Object.assign(data, {
       items: fields,
       isOrganic: true,
@@ -95,15 +95,33 @@ export const PostTypPost = {
     // 1. Get ACF option page from REST API
     const response = await libraries.source.api.get({
       endpoint: `/wp/v2/posts`,
-      params: {        
-        // ...(per_pages ? { per_page: per_pages } : {}),
-        per_page: 3,
-      },
-    });   
+    });
     const fields = await response.json();
     // 2. Add data to `source`.
     const data = state.source.get(route);
-       
+
+    Object.assign(data, {
+      items: fields,
+      isPost: true,
+    });
+  },
+};
+
+// Post Type : post
+export const PostOnHomepage = {
+  pattern: "/posts-home",
+  func: async ({ route, state, libraries }) => {
+    // 1. Get ACF option page from REST API
+    const response = await libraries.source.api.get({
+      endpoint: `/wp/v2/posts`,
+      params: {
+        per_page: 3,
+      },
+    });
+    const fields = await response.json();
+    // 2. Add data to `source`.
+    const data = state.source.get(route);
+
     Object.assign(data, {
       items: fields,
       isPost: true,
@@ -128,6 +146,28 @@ export const PageById = {
     Object.assign(data, {
       items: fields,
       isPage: true,
+    });
+  },
+};
+
+// Custom Post Type : organic
+export const RelatedOrganic = {
+  pattern: "/organic/related/:per_page",
+  func: async ({ route, state, libraries, params }) => {
+    const { per_page } = params;
+    const response = await libraries.source.api.get({
+      endpoint: `/wp/v2/organic`,
+      params: {
+        per_page: per_page,
+      },
+    });
+    const fields = await response.json();
+    // 2. Add data to `source`.
+    const data = state.source.get(route);
+
+    Object.assign(data, {
+      items: fields,
+      isOrganic: true,
     });
   },
 };

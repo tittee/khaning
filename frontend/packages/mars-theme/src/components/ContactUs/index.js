@@ -5,8 +5,7 @@ import imgComposition10 from "./../../assets/images/flowers/composition10.png";
 
 const ContactUs = ({ state, actions, libraries, pageId }) => {
   // Get information about the current URL.
-  const data = state.source.get("/pages/" + pageId).items;
-  console.log(data);
+  const data = state.source.get("/pages/" + pageId).items;  
 
   useEffect(() => {
     actions.source.fetch("/pages/" + pageId);

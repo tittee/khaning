@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 
 import FeaturedMedia from "./../featured-media";
-
 import Link from "../link";
 
 const Products = ({ state, actions }) => {

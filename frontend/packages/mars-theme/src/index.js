@@ -8,7 +8,9 @@ import {
   acfPageID,
   PostTypeOrganic,
   PostTypPost,
-  PageById
+  PostOnHomepage,
+  PageById,
+  RelatedOrganic,
 } from "./apis";
 
 const marsTheme = {
@@ -34,10 +36,10 @@ const marsTheme = {
         showOnList: false,
         showOnPost: false,
       },
-      templates : [
+      templates: [
         "2", //HOMEPAGE or FRONTPAGE
         "6", //ABOUTUS
-        "8" //CONTACTUS
+        "8", //CONTACTUS
       ],
     },
   },
@@ -55,13 +57,12 @@ const marsTheme = {
         state.theme.isMobileMenuOpen = false;
       },
       beforeSSR: async ({ state, actions }) => {
-        
         await Promise.all([
           actions.source.fetch("/menu/primary-menu/"),
-          actions.source.fetch("/acf/options"),          
+          actions.source.fetch("/acf/options"),
           actions.source.fetch("/organic"), //HOMEPAGE or FRONTPAGE
           actions.source.fetch("/posts"), //HOMEPAGE or FRONTPAGE
-          
+
           state.theme.templates.map((id) =>
             actions.source.fetch(`/pages/${id}`)
           ),
@@ -85,7 +86,9 @@ const marsTheme = {
         acfPageID,
         PostTypeOrganic,
         PostTypPost,
-        PageById
+        PostOnHomepage,
+        PageById,
+        RelatedOrganic,
       ],
     },
   },

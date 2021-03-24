@@ -2047,6 +2047,9 @@ body.has-no-comments .comment-respond {
   background-position: top left;
   background-repeat: repeat;
   background-color: #DFD7C3;
+  &.bg-white {
+    background-color: #ffffff;
+  }
 }
 
 .small-bg-about-us {
