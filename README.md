@@ -1,4 +1,4 @@
-# Foobar
+# Frontity + Sage Theme - WordPress Headless CMS
 
 WordPress Sage Theme and Frontity [Headless CMS]
 
