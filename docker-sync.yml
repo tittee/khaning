@@ -1,0 +1,6 @@
+version: "2"
+syncs:
+  wordpress-database-sync:
+    src: './mysql'
+  wordpress-source-sync:
+    src: './wordpress'
