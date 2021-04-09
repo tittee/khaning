@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+      - wordpress-source-sync:/var/lib/mysql
+  wordpress:
+    volumes:
+      - wordpress-source-sync:/var/www/html
+      - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+  cli:
+    volumes:
+      - wordpress-source-sync:/var/www/html
+  mysql:
+    volumes:
+      - wordpress-database-sync:/var/lib/mysql
+volumes:
+  wordpress-source-sync:
+    external: true
+  wordpress-database-sync:
+    external: true
